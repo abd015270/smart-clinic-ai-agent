@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "clinic_id": 1,
+    "name": "Dr. Ahmad Saleh",
+    "specialty": "Dentistry",
+    "available_slots": ["Saturday 10:30", "Saturday 12:00", "Monday 11:00", "Wednesday 14:30"]
+  },
+  {
+    "id": 2,
+    "clinic_id": 2,
+    "name": "Dr. Lina Hassan",
+    "specialty": "Family Medicine",
+    "available_slots": ["Sunday 09:00", "Monday 13:00", "Tuesday 15:30", "Thursday 10:00"]
+  },
+  {
+    "id": 3,
+    "clinic_id": 3,
+    "name": "Dr. Omar Khalil",
+    "specialty": "Pediatrics",
+    "available_slots": ["Saturday 11:00", "Sunday 16:00", "Tuesday 12:30", "Wednesday 17:00"]
+  },
+  {
+    "id": 4,
+    "clinic_id": 4,
+    "name": "Dr. Mariam Nasser",
+    "specialty": "Cardiology",
+    "available_slots": ["Sunday 10:30", "Monday 12:00", "Wednesday 09:30", "Thursday 13:30"]
+  },
+  {
+    "id": 5,
+    "clinic_id": 5,
+    "name": "Dr. Youssef Darwish",
+    "specialty": "Dermatology",
+    "available_slots": ["Saturday 13:00", "Monday 17:00", "Tuesday 11:30", "Wednesday 15:00"]
+  }
+]

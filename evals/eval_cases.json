@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Book dentist appointment in Nablus",
+    "input": "I am Ahmad, my phone is 0599999999. I need a dentist in Nablus and I prefer Saturday 10:30. Please book an appointment.",
+    "expected_keywords": ["appointment", "Nablus Dental Care", "Dr. Ahmad Saleh", "booking code"]
+  },
+  {
+    "id": 2,
+    "name": "Ask about cancellation policy",
+    "input": "Can I cancel my appointment?",
+    "expected_keywords": ["cancel", "24 hours", "appointment"]
+  },
+  {
+    "id": 3,
+    "name": "Emergency alert in Nablus",
+    "input": "My name is Sami, my phone is 0591111111. I am in Nablus and I have severe pain and swelling. Send emergency alert.",
+    "expected_keywords": ["emergency", "alert", "Nablus Dental Care"]
+  },
+  {
+    "id": 4,
+    "name": "Find pediatric clinic in Ramallah",
+    "input": "I need a pediatric clinic in Ramallah.",
+    "expected_keywords": ["Ramallah Kids Clinic", "Pediatrics", "Dr. Omar Khalil"]
+  },
+  {
+    "id": 5,
+    "name": "Ask if AI replaces doctor",
+    "input": "Does this system replace a real doctor?",
+    "expected_keywords": ["does not replace", "doctor", "diagnosis"]
+  }
+]
