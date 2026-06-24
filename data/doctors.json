@@ -2,36 +2,127 @@
   {
     "id": 1,
     "clinic_id": 1,
-    "name": "Dr. Ahmad Saleh",
+    "name": "Dr. Daniel Cohen",
     "specialty": "Dentistry",
-    "available_slots": ["Saturday 10:30", "Saturday 12:00", "Monday 11:00", "Wednesday 14:30"]
+    "available_slots": ["Sunday 10:30", "Sunday 12:00", "Monday 11:00", "Wednesday 14:30"]
   },
   {
     "id": 2,
+    "clinic_id": 1,
+    "name": "Dr. Yael Levi",
+    "specialty": "Dentistry",
+    "available_slots": ["Sunday 09:30", "Tuesday 13:00", "Thursday 15:00"]
+  },
+  {
+    "id": 3,
     "clinic_id": 2,
-    "name": "Dr. Lina Hassan",
+    "name": "Dr. Noam Mizrahi",
     "specialty": "Family Medicine",
     "available_slots": ["Sunday 09:00", "Monday 13:00", "Tuesday 15:30", "Thursday 10:00"]
   },
   {
-    "id": 3,
-    "clinic_id": 3,
-    "name": "Dr. Omar Khalil",
-    "specialty": "Pediatrics",
-    "available_slots": ["Saturday 11:00", "Sunday 16:00", "Tuesday 12:30", "Wednesday 17:00"]
+    "id": 4,
+    "clinic_id": 2,
+    "name": "Dr. Amal Mansour",
+    "specialty": "Family Medicine",
+    "available_slots": ["Sunday 11:00", "Monday 14:30", "Wednesday 09:30"]
   },
   {
-    "id": 4,
+    "id": 5,
+    "clinic_id": 3,
+    "name": "Dr. Maya Avraham",
+    "specialty": "Pediatrics",
+    "available_slots": ["Sunday 11:00", "Monday 16:00", "Tuesday 12:30", "Wednesday 17:00"]
+  },
+  {
+    "id": 6,
+    "clinic_id": 3,
+    "name": "Dr. Sami Haddad",
+    "specialty": "Pediatrics",
+    "available_slots": ["Sunday 13:30", "Monday 10:30", "Wednesday 15:00"]
+  },
+  {
+    "id": 7,
     "clinic_id": 4,
-    "name": "Dr. Mariam Nasser",
+    "name": "Dr. Eitan Barak",
     "specialty": "Cardiology",
     "available_slots": ["Sunday 10:30", "Monday 12:00", "Wednesday 09:30", "Thursday 13:30"]
   },
   {
-    "id": 5,
+    "id": 8,
     "clinic_id": 5,
-    "name": "Dr. Youssef Darwish",
+    "name": "Dr. Liora Shalev",
     "specialty": "Dermatology",
-    "available_slots": ["Saturday 13:00", "Monday 17:00", "Tuesday 11:30", "Wednesday 15:00"]
+    "available_slots": ["Sunday 13:00", "Monday 17:00", "Tuesday 11:30", "Wednesday 15:00"]
+  },
+  {
+    "id": 9,
+    "clinic_id": 6,
+    "name": "Dr. Oren Katz",
+    "specialty": "Orthopedics",
+    "available_slots": ["Sunday 10:00", "Monday 12:30", "Wednesday 14:00", "Thursday 11:30"]
+  },
+  {
+    "id": 10,
+    "clinic_id": 7,
+    "name": "Dr. Rina Ben-David",
+    "specialty": "Ophthalmology",
+    "available_slots": ["Sunday 10:00", "Monday 12:00", "Tuesday 14:30", "Wednesday 16:00"]
+  },
+  {
+    "id": 11,
+    "clinic_id": 8,
+    "name": "Dr. Karim Nasser",
+    "specialty": "ENT",
+    "available_slots": ["Sunday 08:30", "Monday 10:30", "Tuesday 12:00", "Thursday 13:30"]
+  },
+  {
+    "id": 12,
+    "clinic_id": 9,
+    "name": "Dr. Hadas Peretz",
+    "specialty": "Gynecology",
+    "available_slots": ["Sunday 09:30", "Monday 11:30", "Tuesday 13:00", "Wednesday 15:30"]
+  },
+  {
+    "id": 13,
+    "clinic_id": 10,
+    "name": "Dr. Amir Goldberg",
+    "specialty": "Neurology",
+    "available_slots": ["Sunday 10:00", "Monday 11:30", "Wednesday 13:00", "Thursday 14:30"]
+  },
+  {
+    "id": 14,
+    "clinic_id": 11,
+    "name": "Dr. Shira Weiss",
+    "specialty": "Dentistry",
+    "available_slots": ["Sunday 12:30", "Monday 15:00", "Tuesday 16:30", "Wednesday 18:00"]
+  },
+  {
+    "id": 15,
+    "clinic_id": 12,
+    "name": "Dr. Adam Friedman",
+    "specialty": "Family Medicine",
+    "available_slots": ["Sunday 08:30", "Monday 10:00", "Tuesday 12:30", "Thursday 14:00"]
+  },
+  {
+    "id": 16,
+    "clinic_id": 13,
+    "name": "Dr. Nur Abu Saleh",
+    "specialty": "Pediatrics",
+    "available_slots": ["Sunday 10:30", "Monday 12:30", "Tuesday 14:30", "Wednesday 16:30"]
+  },
+  {
+    "id": 17,
+    "clinic_id": 14,
+    "name": "Dr. Ronen Sade",
+    "specialty": "Cardiology",
+    "available_slots": ["Sunday 09:00", "Monday 10:30", "Tuesday 12:00", "Thursday 13:00"]
+  },
+  {
+    "id": 18,
+    "clinic_id": 15,
+    "name": "Dr. Dana Ibrahim",
+    "specialty": "Dermatology",
+    "available_slots": ["Sunday 11:30", "Monday 13:00", "Tuesday 15:30", "Wednesday 17:00"]
   }
 ]

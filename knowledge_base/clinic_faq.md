@@ -10,13 +10,13 @@ Smart Clinic AI Agent is an intelligent assistant that helps patients find clini
 
 \## What specialties are available?
 
-The current system supports Dentistry, Family Medicine, Pediatrics, Cardiology, and Dermatology.
+The current system supports Dentistry, Family Medicine, Pediatrics, Cardiology, Dermatology, Orthopedics, Ophthalmology, ENT, Gynecology, and Neurology.
 
 
 
 \## What cities are supported?
 
-The current system supports Nablus, Hebron, Ramallah, Jenin, and Bethlehem.
+The current system supports Tel Aviv, Jerusalem, Haifa, Beersheba, Nazareth, Eilat, Netanya, Ashdod, Rishon LeZion, Petah Tikva, Holon, Herzliya, Acre, Tiberias, and Safed.
 
 
 
@@ -53,4 +53,10 @@ The patient should bring a personal ID, phone number, previous medical reports i
 \## What is the booking code?
 
 The booking code is a unique number given to the patient after confirming an appointment. The patient shows it at the clinic reception.
+
+
+
+\## Are the clinics in this project real?
+
+The clinics and doctors in this demo are fictional sample data created for the final project demonstration.
 

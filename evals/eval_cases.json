@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "name": "Book dentist appointment in Nablus",
-    "input": "I am Ahmad, my phone is 0599999999. I need a dentist in Nablus and I prefer Saturday 10:30. Please book an appointment.",
-    "expected_keywords": ["appointment", "Nablus Dental Care", "Dr. Ahmad Saleh", "booking code"]
+    "name": "Book dentist appointment in Tel Aviv",
+    "input": "I am Daniel, my phone is 0501112233. I need a dentist in Tel Aviv and I prefer Sunday 10:30. Please book an appointment.",
+    "expected_keywords": ["appointment", "Tel Aviv Dental Care", "Dr. Daniel Cohen", "booking code"]
   },
   {
     "id": 2,
@@ -13,15 +13,15 @@
   },
   {
     "id": 3,
-    "name": "Emergency alert in Nablus",
-    "input": "My name is Sami, my phone is 0591111111. I am in Nablus and I have severe pain and swelling. Send emergency alert.",
-    "expected_keywords": ["emergency", "alert", "Nablus Dental Care"]
+    "name": "Emergency alert in Jerusalem",
+    "input": "My name is Ariel, my phone is 0502223333. I am in Jerusalem and I have severe pain and swelling. Send emergency alert.",
+    "expected_keywords": ["emergency", "alert", "Jerusalem Family Clinic"]
   },
   {
     "id": 4,
-    "name": "Find pediatric clinic in Ramallah",
-    "input": "I need a pediatric clinic in Ramallah.",
-    "expected_keywords": ["Ramallah Kids Clinic", "Pediatrics", "Dr. Omar Khalil"]
+    "name": "Find pediatric clinic in Haifa",
+    "input": "I need a pediatric clinic in Haifa.",
+    "expected_keywords": ["Haifa Kids Clinic", "Pediatrics", "Dr. Maya Avraham"]
   },
   {
     "id": 5,

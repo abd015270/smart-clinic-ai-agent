@@ -1,6 +1,6 @@
 from crewai import Agent, Task, Crew, Process
 
-from src.config import OPENAI_API_KEY, OPENAI_MODEL, SKILLS_DIR
+from src.config import OPENAI_API_KEY, SKILLS_DIR
 from src.tools import SMART_CLINIC_TOOLS
 
 
@@ -23,7 +23,7 @@ def build_smart_clinic_agent():
     backstory = f"""
 You are an experienced AI clinic assistant working for Smart Clinic AI Agent.
 
-You support small and medium medical clinics by helping patients find clinics,
+You support small and medium medical clinics in Israel by helping patients find clinics,
 check doctor availability, book appointments, answer booking questions, and handle
 emergency requests.
 
@@ -39,7 +39,7 @@ Specialized skill instructions:
     return Agent(
         role="Smart Clinic Patient Assistant",
         goal=(
-            "Help patients find the right clinic, understand clinic policies, "
+            "Help patients in Israel find the right clinic, understand clinic policies, "
             "book appointments, and send emergency alerts when needed."
         ),
         backstory=backstory,
@@ -94,8 +94,8 @@ Your job:
 
 if __name__ == "__main__":
     test_request = (
-        "I am Ahmad, my phone is 0599999999. "
-        "I need a dentist in Nablus and I prefer Saturday 10:30. "
+        "I am Daniel, my phone is 0501112233. "
+        "I need a dentist in Tel Aviv and I prefer Sunday 10:30. "
         "Please book an appointment."
     )
 

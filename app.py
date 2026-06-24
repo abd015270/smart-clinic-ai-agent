@@ -8,6 +8,7 @@ from src.database import (
 )
 from src.agent import run_smart_clinic_agent
 from src.tools import (
+    load_clinics,
     find_clinics_logic,
     get_availability_logic,
     book_appointment_logic,
@@ -28,6 +29,15 @@ st.set_page_config(
 st.title("🏥 Smart Clinic AI Agent")
 st.caption("AI-powered clinic assistant for booking, clinic search, FAQ, and emergency alerts.")
 
+clinics_data = load_clinics()
+CITY_OPTIONS = sorted({clinic["city"] for clinic in clinics_data})
+SPECIALTY_OPTIONS = sorted({clinic["specialty"] for clinic in clinics_data})
+EMERGENCY_CITY_OPTIONS = sorted(
+    {clinic["city"] for clinic in clinics_data if clinic.get("emergency_available")}
+) or CITY_OPTIONS
+
+DEFAULT_CITY = "Tel Aviv" if "Tel Aviv" in CITY_OPTIONS else CITY_OPTIONS[0]
+DEFAULT_SPECIALTY = "Dentistry" if "Dentistry" in SPECIALTY_OPTIONS else SPECIALTY_OPTIONS[0]
 
 menu = st.sidebar.radio(
     "Navigation",
@@ -51,8 +61,8 @@ if menu == "AI Agent Chat":
     )
 
     example = (
-        "I am Ahmad, my phone is 0599999999. "
-        "I need a dentist in Nablus and I prefer Saturday 10:30. "
+        "I am Daniel, my phone is 0501112233. "
+        "I need a dentist in Tel Aviv and I prefer Sunday 10:30. "
         "Please book an appointment."
     )
 
@@ -81,13 +91,15 @@ elif menu == "Find Clinic":
     with col1:
         city = st.selectbox(
             "City",
-            ["Nablus", "Hebron", "Ramallah", "Jenin", "Bethlehem"],
+            CITY_OPTIONS,
+            index=CITY_OPTIONS.index(DEFAULT_CITY),
         )
 
     with col2:
         specialty = st.selectbox(
             "Specialty",
-            ["Dentistry", "Family Medicine", "Pediatrics", "Cardiology", "Dermatology"],
+            SPECIALTY_OPTIONS,
+            index=SPECIALTY_OPTIONS.index(DEFAULT_SPECIALTY),
         )
 
     if st.button("Search Clinic"):
@@ -117,24 +129,26 @@ elif menu == "Book Appointment":
     col1, col2 = st.columns(2)
 
     with col1:
-        patient_name = st.text_input("Patient Name", value="Ahmad")
+        patient_name = st.text_input("Patient Name", value="Daniel")
         city = st.selectbox(
             "City",
-            ["Nablus", "Hebron", "Ramallah", "Jenin", "Bethlehem"],
+            CITY_OPTIONS,
+            index=CITY_OPTIONS.index(DEFAULT_CITY),
             key="book_city",
         )
         specialty = st.selectbox(
             "Specialty",
-            ["Dentistry", "Family Medicine", "Pediatrics", "Cardiology", "Dermatology"],
+            SPECIALTY_OPTIONS,
+            index=SPECIALTY_OPTIONS.index(DEFAULT_SPECIALTY),
             key="book_specialty",
         )
 
     with col2:
-        patient_phone = st.text_input("Patient Phone", value="0599999999")
+        patient_phone = st.text_input("Patient Phone", value="0501112233")
         preferred_slot = st.text_input(
             "Preferred Slot",
-            value="Saturday 10:30",
-            help="Example: Saturday 10:30",
+            value="Sunday 10:30",
+            help="Example: Sunday 10:30",
         )
 
     if st.button("Show Available Doctors"):
@@ -179,14 +193,19 @@ elif menu == "Emergency Alert":
         "This feature is for demo purposes. If symptoms are life-threatening, contact local emergency services immediately."
     )
 
+    default_emergency_city = (
+        "Jerusalem" if "Jerusalem" in EMERGENCY_CITY_OPTIONS else EMERGENCY_CITY_OPTIONS[0]
+    )
+
     col1, col2 = st.columns(2)
 
     with col1:
         patient_name = st.text_input("Patient Name", value="Emergency Patient")
-        patient_phone = st.text_input("Patient Phone", value="0598888888")
+        patient_phone = st.text_input("Patient Phone", value="0509998888")
         city = st.selectbox(
             "City",
-            ["Nablus", "Hebron", "Ramallah", "Jenin", "Bethlehem"],
+            EMERGENCY_CITY_OPTIONS,
+            index=EMERGENCY_CITY_OPTIONS.index(default_emergency_city),
             key="emergency_city",
         )
 
@@ -230,7 +249,7 @@ elif menu == "Knowledge Base RAG":
 
     question = st.text_input(
         "Ask a question",
-        value="Can I cancel my appointment?",
+        value="Which cities are supported?",
     )
 
     if st.button("Search Knowledge Base"):
@@ -265,7 +284,10 @@ elif menu == "Business Cost":
         col2.metric("Server Cost / Month", f"${result['server_monthly_cost_usd']}")
         col3.metric("Total Cost / Month", f"${result['estimated_total_cost_usd']}")
 
-        st.write(f"**Suggested Subscription Price:** ${result['suggested_subscription_price_usd']} / clinic / month")
+        st.write(
+            f"**Suggested Subscription Price:** "
+            f"${result['suggested_subscription_price_usd']} / clinic / month"
+        )
         st.info(result["business_note"])
 
 
@@ -301,7 +323,7 @@ elif menu == "Dashboard":
                 "Created At",
             ],
         )
-        st.dataframe(appointments_df, use_container_width=True)
+        st.dataframe(appointments_df, width="stretch")
     else:
         st.info("No appointments yet.")
 
@@ -322,6 +344,6 @@ elif menu == "Dashboard":
                 "Created At",
             ],
         )
-        st.dataframe(emergency_df, use_container_width=True)
+        st.dataframe(emergency_df, width="stretch")
     else:
         st.info("No emergency alerts yet.")

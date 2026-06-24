@@ -1,7 +1,6 @@
 import json
 from pathlib import Path
 
-from src.agent import run_smart_clinic_agent
 from src.tools import (
     book_appointment_logic,
     ask_knowledge_base_logic,
@@ -34,15 +33,14 @@ def contains_expected_keywords(response: str, expected_keywords: list[str]):
 
 def run_fast_eval_case(case):
     case_id = case["id"]
-    user_input = case["input"]
 
     if case_id == 1:
         result = book_appointment_logic(
-            patient_name="Ahmad",
-            patient_phone="0599999999",
-            city="Nablus",
+            patient_name="Daniel",
+            patient_phone="0501112233",
+            city="Tel Aviv",
             specialty="Dentistry",
-            preferred_slot="Saturday 10:30",
+            preferred_slot="Sunday 10:30",
         )
         response = json.dumps(result, ensure_ascii=False)
 
@@ -52,16 +50,16 @@ def run_fast_eval_case(case):
 
     elif case_id == 3:
         result = send_emergency_alert_logic(
-            patient_name="Sami",
-            patient_phone="0591111111",
-            city="Nablus",
+            patient_name="Ariel",
+            patient_phone="0502223333",
+            city="Jerusalem",
             symptoms="Severe pain and swelling",
             urgency_level="high",
         )
         response = json.dumps(result, ensure_ascii=False)
 
     elif case_id == 4:
-        result = get_availability_logic("Ramallah", "Pediatrics")
+        result = get_availability_logic("Haifa", "Pediatrics")
         response = json.dumps(result, ensure_ascii=False)
 
     elif case_id == 5:
